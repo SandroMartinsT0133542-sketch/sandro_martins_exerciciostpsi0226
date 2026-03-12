@@ -77,12 +77,12 @@ for j in range(15, 1000, 10):
 """ Exercício 9: Escreva um programa que solicite um número ao utilizador até que o valor deste esteja entre os valores 1 e 100.(Use o ciclo do ... while) """
 print("-------------------------------- Solicitar número entre 1 e 100 --------------------------------")
 while True:
-  numero = int(input("Insira um número entre 1 e 100: "))
+  numero = int(input("Insira um número"))
   if 1 <= numero <= 100:
-    print(f"Você digitou o número {numero}, que está entre 1 e 100.")
+    print(f"O número {numero}, que inseriu, está entre 1 e 100.")
     break
   else:
-    print("Número inválido. Por favor, tente novamente.")
+    numero = int(input("Insira um número"))
 
 """ Exercício 10: Elabore um programa que lê um número e escreve quantos divisores ele possui. """
 print("-------------------------------- Contar divisores --------------------------------")
@@ -153,18 +153,24 @@ for i in range(0, 256, 20):
     break
 
 """ Exercícios 16: Elabore um programa que constitua a média de 30 números pares que sejam introduzidos. Validando a entrada de números inteiros entre 1 e 50. """
-print("-------------------------------- Média de números pares --------------------------------")
-numeros = []
-while len(numeros) < 30:
-  numero = int(input("Insira um número inteiro entre 1 e 50: "))
-  if numero >= 1 and numero <= 50:
-    numeros.append(numero)
-  else:
-    print("Número inválido. Por favor, Insira um número par entre 1 e 50.")
 
-pares = [num for num in numeros if num % 2 == 0]
-media_pares = sum(pares) / len(pares)
-print(f"A média dos números pares é: {media_pares}")
+print("-------------------------------- Média de números pares --------------------------------")
+MIN_PAIR = 30
+min, max, soma, pares, media  = 1, 50, 0, 0, 0
+
+while pares < MIN_PAIR:
+  numero = int(input(f"Insira um número {min} e {max}: "))
+  while numero < min or numero > max:
+    numero = int(input(f"Número inválido. Por favor, Insira um número entre {min} e {max}: "))
+  if numero % 2 == 0:
+    soma += numero
+    pares += 1
+  else:
+    numero = int(input(f"Insira um número {min} e {max}: "))
+
+media = soma / pares
+
+print(f"A média dos números pares é: {round(media, 2)}")
 
 
 """ Exercícios 17: Elabore um programa que determine os múltiplos de 5 mas não múltiplos de 3 …. De 1 a 1000 deve ser a sequência. """

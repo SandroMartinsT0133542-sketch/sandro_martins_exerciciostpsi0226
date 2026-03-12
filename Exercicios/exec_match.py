@@ -9,7 +9,7 @@ Saída → Fim de semana
 
 print("-------------------------------- Tipo de dia --------------------------------")
 
-dia = input("Digite o nome de um dia da semana: ").lower()
+dia = input("Introduza o nome de um dia da semana: ").lower()
 match dia:
   case "segunda-feira" | "terça-feira" | "quarta-feira" | "quinta-feira" | "sexta-feira":
     print("Dia útil")
@@ -34,7 +34,7 @@ Saída →  Bom
 
 print("-------------------------------- Classificação de nota --------------------------------")
 
-nota = float(input("Digite uma nota (0-100): "))
+nota = float(input("Introduza uma nota (0-100): "))
 
 match nota:
   case nota if nota >= 90:
@@ -65,7 +65,7 @@ Saída → Venda de 250€
 
 print("-------------------------------- Tipo de pedido --------------------------------")
 
-pedidos = [{"tipo": "compra", "valor": 100}, {"tipo": "venda", "valor": 250}, {"tipo": "aluguel", "valor": 300}]
+pedidos = [{"tipo": "compra", "valor": 100}, {"tipo": "venda", "valor": 250}, {"tipo": "aluguer", "valor": 300}]
 
 for pedido in pedidos:
   match pedido: 
@@ -94,7 +94,7 @@ Saída → Lista
 """
 
 print("-------------------------------- Tipo de dado --------------------------------")
-valor = input("Digite um valor: ")
+valor = input("Introduza um valor: ")
 
 match valor:
   case valor if type(valor) == int:
@@ -128,7 +128,7 @@ Saída → Pergunta
 
 print("-------------------------------- Análise de mensagem --------------------------------")
 
-mensagem = input("Digite uma mensagem: ").lower()
+mensagem = input("Introduza uma mensagem: ").lower()
 
 match mensagem:
   case "ola" | "olá" | "bom dia":
@@ -171,22 +171,22 @@ for servidor in servidores:
 7. Classificação de produto
 Recebe um dicionário com as chaves "categoria" e "preco".
 Retorna:
-•	“Produto de luxo” se categoria for “eletrônico” e preço acima de 1000
-•	“Produto comum” se categoria for “eletrônico” e preço até 1000
+•	“Produto de luxo” se categoria for “eletrónico” e preço acima de 1000
+•	“Produto comum” se categoria for “eletrónico” e preço até 1000
 •	“Produto alimentar” se categoria for “alimento”
 •	“Categoria desconhecida” caso contrário
 Exemplo:
-Entrada → {"categoria": "eletrônico", "preco": 1500}
+Entrada → {"categoria": "eletrónico", "preco": 1500}
 Saída → Produto de luxo 
 """
 print("-------------------------------- Classificação de produto --------------------------------")
-produtos = [{"categoria": "eletrônico", "preco": 1500}, {"categoria": "eletrônico", "preco": 800}, {"categoria": "alimento", "preco": 10}, {"categoria": "roupa", "preco": 50}]
+produtos = [{"categoria": "eletrónico", "preco": 1500}, {"categoria": "eletrónico", "preco": 800}, {"categoria": "alimento", "preco": 10}, {"categoria": "roupa", "preco": 50}]
 
 for produto in produtos:
   match produto:
-    case {"categoria": "eletrônico", "preco": preco} if preco > 1000:
+    case {"categoria": "eletrónico", "preco": preco} if preco > 1000:
       print("Produto de luxo")
-    case {"categoria": "eletrônico", "preco": preco} if preco <= 1000:
+    case {"categoria": "eletrónico", "preco": preco} if preco <= 1000:
       print("Produto comum")
     case {"categoria": "alimento"}:
       print("Produto alimentar")
@@ -207,9 +207,9 @@ Saída → 5
 """
 
 print("-------------------------------- Operação matemática --------------------------------")
-operacao = input("Digite a operação (soma, subtrai, multiplica, divide): ").lower()
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
+operacao = input("Introduza a operação (soma, subtrai, multiplica, divide): ").lower()
+num1 = float(input("Introduza o primeiro número: "))
+num2 = float(input("Introduza o segundo número: "))
 
 match operacao:
   case "soma":
@@ -275,8 +275,8 @@ Saída → Jogador 1 venceu
 """
 
 print("-------------------------------- Jogo: Pedra, Papel ou Tesoura --------------------------------")
-jogada1 = input("Jogador 1, digite sua jogada (pedra, papel ou tesoura): ").lower()
-jogada2 = input("Jogador 2, digite sua jogada (pedra, papel ou tesoura): ").lower()
+jogada1 = input("Jogador 1, introduza a sua jogada (pedra, papel ou tesoura): ").lower()
+jogada2 = input("Jogador 2, introduza a sua jogada (pedra, papel ou tesoura): ").lower()
 
 match (jogada1, jogada2):
   case ("pedra", "tesoura") | ("tesoura", "papel") | ("papel", "pedra"):

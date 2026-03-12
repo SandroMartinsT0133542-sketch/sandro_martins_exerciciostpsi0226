@@ -11,7 +11,7 @@ Saída esperada: 1 hora, 1 minuto e 5 segundos.
 """
 print("-------------------------------- Converter Segundos --------------------------------")
 
-segundos = int(input("Digite o número de segundos: "))
+segundos = int(input("Introduza o número de segundos: "))
 horas = segundos // 3600
 resto_segundos = segundos % 3600
 minutos = resto_segundos // 60
@@ -48,9 +48,9 @@ Menor: 2
 
 print("-------------------------------- Encontrar o Maior e o Menor --------------------------------")
 
-num1 = int(input("Digite o primeiro número: "))
-num2 = int(input("Digite o segundo número: "))
-num3 = int(input("Digite o terceiro número: "))
+num1 = int(input("Introduza o primeiro número: "))
+num2 = int(input("Introduza o segundo número: "))
+num3 = int(input("Introduza o terceiro número: "))
 
 if(num1 >= num2 and num1>= num3):
   maior = num1
@@ -84,8 +84,8 @@ Decrescente: 7, 2
 
 print("-------------------------------- Mostrar Números em Ordem Crescente e Decrescente --------------------------------")
 
-num1 = int(input("Digite o primeiro número: "))
-num2 = int(input("Digite o segundo número: "))
+num1 = int(input("Introduza o primeiro número: "))
+num2 = int(input("Introduza o segundo número: "))
 
 if(num1 <= num2):
   print(f"Crescente: {num1}, {num2}")
@@ -107,8 +107,8 @@ Entrada: Saldo = 500, Cheque = 300
 Saída esperada:
 Cheque descontado, saldo: 200 """
 
-saldo = float(input("Digite o saldo inicial: "))
-cheque = float(input("Digite o valor do cheque: "))
+saldo = float(input("Introduza o saldo inicial: "))
+cheque = float(input("Introduza o valor do cheque: "))
 
 if cheque > saldo:
   print("Cheque não pode ser descontado, saldo insuficiente.")
@@ -132,9 +132,9 @@ Decrescente: 9, 4, 2
 
 print("-------------------------------- Ler 3 Valores e Exibir em Ordem Crescente e Decrescente --------------------------------")
 
-num1 = int(input("Digite o primeiro número: "))
-num2 = int(input("Digite o segundo número: "))
-num3 = int(input("Digite o terceiro número: "))
+num1 = int(input("Introduza o primeiro número: "))
+num2 = int(input("Introduza o segundo número: "))
+num3 = int(input("Introduza o terceiro número: "))
 
 if(num1 <= num2 and num1 <= num3):
   menor = num1
@@ -187,8 +187,8 @@ Total a pagar: 297,50€
 
 print("-------------------------------- Desconto de Compra --------------------------------")
 
-nome = input("Digite o nome do cliente: ")
-compra = float(input("Digite o valor da compra: "))
+nome = input("Introduza o nome do cliente: ")
+compra = float(input("Introduza o valor da compra: "))
 
 if compra <= 200:
   desconto = compra * 0.10
@@ -219,9 +219,9 @@ Aprovado
 
 print("-------------------------------- Calcular a Média de Notas com Pesos --------------------------------")
 
-nota1 = float(input("Digite a nota da primeira prova (peso 2): "))
-nota2 = float(input("Digite a nota da segunda prova (peso 3): "))
-nota3 = float(input("Digite a nota da terceira prova (peso 5): "))
+nota1 = float(input("Introduza a nota da primeira prova (peso 2): "))
+nota2 = float(input("Introduza a nota da segunda prova (peso 3): "))
+nota3 = float(input("Introduza a nota da terceira prova (peso 5): "))
 media = (nota1 * 2 + nota2 * 3 + nota3 * 5) / 10
 
 print(f"Média: {media:.1f}")
@@ -243,10 +243,10 @@ print("-------------------------------- Calcular a Média de 10 Notas e informar
 
 notas = []
 for i in range(10):
-  nota = float(input(f"Digite a nota do aluno {i+1} (0 a 20): "))
+  nota = float(input(f"Introduza a nota do aluno {i+1} (0 a 20): "))
   while nota < 0 or nota > 20:
-    print("Nota inválida. Digite uma nota entre 0 e 20.")
-    nota = float(input(f"Digite a nota do aluno {i+1} (0 a 20): "))
+    print("Nota inválida. Introduza uma nota entre 0 e 20.")
+    nota = float(input(f"Introduza a nota do aluno {i+1} (0 a 20): "))
   notas.append(nota)
 media = sum(notas) / len(notas)
 print(f"Média: {media:.1f}")
@@ -270,7 +270,7 @@ Saída esperada: Maio
 """
 
 print("-------------------------------- Exibir Nome do Mês --------------------------------")
-mes_numero = int(input("Digite um número de 1 a 12 para o mês: "))
+mes_numero = int(input("Introduza um número de 1 a 12 para o mês: "))
 
 match mes_numero:
   case 1:
@@ -298,7 +298,7 @@ match mes_numero:
   case 12:
     print("Dezembro")
   case _:
-    print("Número inválido. Digite um número entre 1 e 12.")
+    print("Número inválido. Introduza um número entre 1 e 12.")
 
 
 """ 
@@ -320,7 +320,7 @@ pares = 0
 impares = 0
 
 for i in range(10):
-  numero = int(input(f"Digite o número {i+1}: "))
+  numero = int(input(f"Introduza o número {i+1}: "))
   if numero % 2 == 0:
     pares += 1
   else:
