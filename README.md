@@ -1,29 +1,39 @@
-# Python Exercises
+# Exercícios de Python
 
-This repository contains beginner Python exercises focused on conditionals, loops, and utility functions.
+Este repositório reúne um conjunto de exercícios de iniciação a Python, com foco em estruturas condicionais, ciclos, `match/case` e funções auxiliares. O projeto foi organizado para permitir uma exploração simples, com scripts interativos que podem ser executados diretamente na consola.
 
-## Project Structure
+## Objetivo
 
-- `Exercicios/exec_if.py`: conditionals exercises.
-- `Exercicios/exec_loop.py`: loops exercises (interactive).
-- `Exercicios/exec_match.py`: match/case exercises.
-- `Exercicios/utils.py`: shared helper functions.
-- `Exercicios/test_utils.py`: unit tests for helper functions.
+Este projeto foi pensado para praticar:
 
-## Requirements
+- Leitura e validação de dados introduzidos pelo utilizador.
+- Estruturas de decisão com `if/elif/else`.
+- Repetições com ciclos.
+- Padrões com `match/case`.
+- Criação e teste de funções auxiliares.
 
-- Python 3.10+ installed.
-- Windows PowerShell (commands below are written for PowerShell).
+## Estrutura do Projeto
 
-## Run Exercises
+- `Exercicios/exec_if.py` contém exercícios centrados em estruturas condicionais.
+- `Exercicios/exec_loop.py` contém exercícios com ciclos e interação contínua com o utilizador.
+- `Exercicios/exec_match.py` contém exercícios baseados em `match/case`.
+- `Exercicios/utils.py` reúne funções auxiliares reutilizáveis.
+- `Exercicios/test_utils.py` contém testes unitários para as funções auxiliares.
 
-From the project root, move into the `Exercicios` folder first:
+## Requisitos
+
+- Python 3.10 ou superior.
+- PowerShell no Windows, caso pretenda usar exatamente os comandos apresentados abaixo.
+
+## Como Executar
+
+A partir da raiz do projeto, entre primeiro na pasta `Exercicios`:
 
 ```powershell
 Set-Location Exercicios
 ```
 
-Run each script with Python:
+Depois execute o ficheiro pretendido:
 
 ```powershell
 python exec_if.py
@@ -31,7 +41,7 @@ python exec_loop.py
 python exec_match.py
 ```
 
-If your machine does not map `python` to Python 3, use one of these alternatives:
+Se o comando `python` não estiver associado à versão correta do Python no seu sistema, pode usar:
 
 ```powershell
 py exec_if.py
@@ -39,18 +49,37 @@ py exec_loop.py
 py exec_match.py
 ```
 
-or (example absolute interpreter path):
+Em alternativa, pode indicar explicitamente o caminho do interpretador:
 
 ```powershell
 & C:/Python313/python.exe exec_loop.py
 ```
 
-## Run Tests
+## O Que Esperar dos Scripts
 
-Tests are in `Exercicios/test_utils.py` and import `utils.py` from the same folder.
-To avoid import path conflicts, run tests from inside `Exercicios`:
+- Os ficheiros principais são interativos e pedem dados ao utilizador ao longo da execução.
+- Cada script pode executar vários exercícios de seguida.
+- A maior parte dos resultados é apresentada diretamente no terminal.
+
+## Testes
+
+Os testes automáticos disponíveis incidem sobre as funções definidas em `Exercicios/utils.py`.
+
+Para executar os testes, a partir da pasta `Exercicios`, use:
 
 ```powershell
-Set-Location Exercicios
 python -m unittest test_utils.py
 ```
+
+## Funções Auxiliares
+
+O ficheiro `Exercicios/utils.py` inclui atualmente:
+
+- `print_client`, para apresentar os dados de um cliente num formato estruturado.
+- `print_tabuada`, para mostrar a tabuada de um número.
+
+## Notas
+
+- O projeto não depende de bibliotecas externas.
+- Basta ter Python instalado para executar os scripts e os testes.
+- O conteúdo do projeto está orientado para prática e aprendizagem, não para utilização em produção.
