@@ -2,6 +2,11 @@
 
 Este repositório reúne um conjunto de exercícios de iniciação a Python, com foco em estruturas condicionais, ciclos, `match/case` e funções auxiliares. O projeto foi organizado para permitir uma exploração simples, com scripts interativos que podem ser executados diretamente na consola.
 
+## Atualizações Recentes
+
+- 13/03/2026: corrigido o teste em `Exercicios/test_utils.py` para usar `mock.patch` com `from unittest import mock`, garantindo compatibilidade na execução dos testes.
+- Testes unitários de `Exercicios/utils.py` validados com sucesso (`3 tests OK`).
+
 ## Objetivo
 
 Este projeto foi pensado para praticar:
@@ -27,7 +32,17 @@ Este projeto foi pensado para praticar:
 
 ## Como Executar
 
-A partir da raiz do projeto, entre primeiro na pasta `Exercicios`:
+A partir da raiz do projeto, pode executar os scripts de duas formas.
+
+### Opção recomendada (venv do projeto no Windows)
+
+```powershell
+& .\.venv\Scripts\python.exe .\Exercicios\exec_if.py
+& .\.venv\Scripts\python.exe .\Exercicios\exec_loop.py
+& .\.venv\Scripts\python.exe .\Exercicios\exec_match.py
+```
+
+### Opção alternativa (entrar na pasta Exercicios)
 
 ```powershell
 Set-Location Exercicios
@@ -65,11 +80,28 @@ Em alternativa, pode indicar explicitamente o caminho do interpretador:
 
 Os testes automáticos disponíveis incidem sobre as funções definidas em `Exercicios/utils.py`.
 
-Para executar os testes, a partir da pasta `Exercicios`, use:
+Para executar os testes a partir da raiz do projeto (recomendado):
+
+```powershell
+& .\.venv\Scripts\python.exe -m unittest discover -s .\Exercicios -p "test*.py"
+```
+
+Em alternativa, pode executar diretamente o ficheiro de testes:
+
+```powershell
+& .\.venv\Scripts\python.exe .\Exercicios\test_utils.py
+```
+
+Se estiver dentro da pasta `Exercicios`, use:
 
 ```powershell
 python -m unittest test_utils.py
 ```
+
+## Validação Técnica
+
+- Compilação de verificação efetuada com `python -m compileall .` sem erros de sintaxe.
+- Estado atual dos testes: `OK`.
 
 ## Funções Auxiliares
 

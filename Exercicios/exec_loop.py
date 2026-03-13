@@ -1,5 +1,5 @@
 
-from utils import print_tabuada, print_client
+from utils import calc_operation, print_tabuada, print_client
 
 """ Exercício 1: Crie um algoritmo que mostre os 30 primeiros números ímpares e pares. """
 print("-------------------------------- Números pares e ímpares --------------------------------")
@@ -246,28 +246,17 @@ while True:
 
   match escolha:
     case"1":
-      num1 = float(input("Insira o primeiro número: "))
-      num2 = float(input("Insira o segundo número: "))
-      resultado = num1 + num2
+      resultado = calc_operation("add")
       print(f"Resultado da soma: {resultado}")
     case"2":
-      num1 = float(input("Insira o primeiro número: "))
-      num2 = float(input("Insira o segundo número: "))
-      resultado = num1 - num2
+      resultado = calc_operation("sub")
       print(f"Resultado da subtração: {resultado}")
     case"3":
-      num1 = float(input("Insira o primeiro número: "))
-      num2 = float(input("Insira o segundo número: "))
-      resultado = num1 * num2
+      resultado = calc_operation("mult")
       print(f"Resultado da multiplicação: {resultado}")
     case"4":
-      num1 = float(input("Insira o primeiro número: "))
-      num2 = float(input("Insira o segundo número: "))
-      if num2 != 0:
-        resultado = num1 / num2
-        print(f"Resultado da divisão: {resultado}")
-      else:
-        print("Erro: Divisão por zero não é permitida.")
+      resultado = calc_operation("div")
+      print(f"Resultado da divisão: {resultado}")
     case"5":
       max_num = int(input("Insira o número máximo para a tabuada (entre 1 e 1000): "))
       if 1 <= max_num <= 1000:
@@ -296,8 +285,6 @@ db = []
 DESCONTO1 = 0.05
 DESCONTO2 = 0.10
 DESCONTO3 = 0.15
-
-
 
 while True:
   print("1. Inserir cliente")

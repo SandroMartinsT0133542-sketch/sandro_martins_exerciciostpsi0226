@@ -1,7 +1,8 @@
 import unittest
+from unittest import mock
 from io import StringIO
 from contextlib import redirect_stdout
-from utils import print_client, print_tabuada
+from utils import print_client, print_tabuada, calc_operation
 
 class TestUtils(unittest.TestCase):
     def test_print_client(self):
@@ -54,6 +55,28 @@ class TestUtils(unittest.TestCase):
         
         output = buf.getvalue()
         self.assertEqual(output.strip(), expected.strip())
+
+    def test_calc_operation(self):
+        with mock.patch('builtins.input', side_effect=['10', '5']):
+            result = calc_operation("add")
+            self.assertEqual(result, 15)
+
+        with mock.patch('builtins.input', side_effect=['10', '5']):
+            result = calc_operation("sub")
+            self.assertEqual(result, 5)
+
+        with mock.patch('builtins.input', side_effect=['10', '5']):
+            result = calc_operation("mult")
+            self.assertEqual(result, 50)
+
+        with mock.patch('builtins.input', side_effect=['10', '5']):
+            result = calc_operation("div")
+            self.assertEqual(result, 2)
+
+        with mock.patch('builtins.input', side_effect=['10', '0']):
+            result = calc_operation("div")
+            self.assertEqual(result, "Divisão por zero não é permitida")
+            
 
 if __name__ == '__main__':
     unittest.main()
