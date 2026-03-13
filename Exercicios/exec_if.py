@@ -328,5 +328,3 @@ for i in range(10):
 
 print(f"Pares: {pares}")
 print(f"Ímpares: {impares}")
-
-

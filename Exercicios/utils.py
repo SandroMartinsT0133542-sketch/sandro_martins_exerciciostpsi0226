@@ -33,4 +33,3 @@ def calc_operation(operation: op):
       return num1 * num2
     case "div":
       return num1 / num2 if num2 != 0 else "Divisão por zero não é permitida"
-    

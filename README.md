@@ -4,8 +4,13 @@ Este repositório reúne um conjunto de exercícios de iniciação a Python, com
 
 ## Atualizações Recentes
 
+- 13/03/2026: refatorado `Exercicios/exec_loop.py` para estrutura 100% baseada em funções (`exec1` a `exec22`) chamadas automaticamente em `main()`.
 - 13/03/2026: corrigido o teste em `Exercicios/test_utils.py` para usar `mock.patch` com `from unittest import mock`, garantindo compatibilidade na execução dos testes.
 - Testes unitários de `Exercicios/utils.py` validados com sucesso (`3 tests OK`).
+
+## Regra de Manutenção
+
+- A cada alteração de código relevante, este `README.md` deve ser atualizado para refletir as mudanças.
 
 ## Objetivo
 
@@ -115,3 +120,7 @@ O ficheiro `Exercicios/utils.py` inclui atualmente:
 - O projeto não depende de bibliotecas externas.
 - Basta ter Python instalado para executar os scripts e os testes.
 - O conteúdo do projeto está orientado para prática e aprendizagem, não para utilização em produção.
+
+## Assinatura
+
+Documento mantido e atualizado com apoio do GitHub Copilot.

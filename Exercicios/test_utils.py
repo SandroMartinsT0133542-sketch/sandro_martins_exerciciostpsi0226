@@ -76,7 +76,6 @@ class TestUtils(unittest.TestCase):
         with mock.patch('builtins.input', side_effect=['10', '0']):
             result = calc_operation("div")
             self.assertEqual(result, "Divisão por zero não é permitida")
-            
 
 if __name__ == '__main__':
     unittest.main()
