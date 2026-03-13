@@ -4,6 +4,9 @@ Este repositório reúne um conjunto de exercícios de iniciação a Python, com
 
 ## Atualizações Recentes
 
+- 13/03/2026: adicionado `run_tests.py` na raiz para executar os testes sem dependência de manipulação manual de `sys.path` nos ficheiros de teste.
+- 13/03/2026: ajustados imports de testes e de `Exercicios/exec_loop.py` para funcionamento correto em modo package (`Exercicios`).
+- 13/03/2026: corrigido `Exercicios/test_loop.py` para validar output de `exec1()` e permitir import correto ao correr testes desde a raiz do projeto.
 - 13/03/2026: refatorado `Exercicios/exec_loop.py` para estrutura 100% baseada em funções (`exec1` a `exec22`) chamadas automaticamente em `main()`.
 - 13/03/2026: corrigido o teste em `Exercicios/test_utils.py` para usar `mock.patch` com `from unittest import mock`, garantindo compatibilidade na execução dos testes.
 - Testes unitários de `Exercicios/utils.py` validados com sucesso (`3 tests OK`).
@@ -85,28 +88,29 @@ Em alternativa, pode indicar explicitamente o caminho do interpretador:
 
 Os testes automáticos disponíveis incidem sobre as funções definidas em `Exercicios/utils.py`.
 
-Para executar os testes a partir da raiz do projeto (recomendado):
+Para executar todos os testes a partir da raiz do projeto:
 
 ```powershell
-& .\.venv\Scripts\python.exe -m unittest discover -s .\Exercicios -p "test*.py"
+& .\.venv\Scripts\python.exe .\run_tests.py
 ```
 
-Em alternativa, pode executar diretamente o ficheiro de testes:
+Forma alternativa:
+
+```powershell
+Set-Location Exercicios
+& ..\.venv\Scripts\python.exe -m unittest discover -p "test*.py"
+```
+
+Em alternativa, para um ficheiro especifico:
 
 ```powershell
 & .\.venv\Scripts\python.exe .\Exercicios\test_utils.py
 ```
 
-Se estiver dentro da pasta `Exercicios`, use:
-
-```powershell
-python -m unittest test_utils.py
-```
-
 ## Validação Técnica
 
 - Compilação de verificação efetuada com `python -m compileall .` sem erros de sintaxe.
-- Estado atual dos testes: `OK`.
+- Estado atual dos testes: `OK` (5 testes).
 
 ## Funções Auxiliares
 

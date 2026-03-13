@@ -2,7 +2,11 @@ import unittest
 from unittest import mock
 from io import StringIO
 from contextlib import redirect_stdout
-from utils import print_client, print_tabuada, calc_operation
+
+try:
+    from Exercicios.utils import print_client, print_tabuada, calc_operation
+except ImportError:
+    from utils import print_client, print_tabuada, calc_operation
 
 class TestUtils(unittest.TestCase):
     def test_print_client(self):
