@@ -4,6 +4,7 @@ Este repositório reúne um conjunto de exercícios de iniciação a Python, com
 
 ## Atualizações Recentes
 
+- 16/03/2026: criado `Exercicios/test_output_constants.py` para centralizar strings de output reutilizadas nos testes de `Exercicios/test_loop.py`.
 - 13/03/2026: adicionado `run_tests.py` na raiz para executar os testes sem dependência de manipulação manual de `sys.path` nos ficheiros de teste.
 - 13/03/2026: ajustados imports de testes e de `Exercicios/exec_loop.py` para funcionamento correto em modo package (`Exercicios`).
 - 13/03/2026: corrigido `Exercicios/test_loop.py` para validar output de `exec1()` e permitir import correto ao correr testes desde a raiz do projeto.
