@@ -1,12 +1,15 @@
 try:
-  from .utils import calc_operation, print_tabuada, print_client
+  from ..utils import calc_operation, print_tabuada, print_client
 except ImportError:
   from utils import calc_operation, print_tabuada, print_client
 
 try:
-  from .output_constants import *
+  from ..output_constants import *
 except ImportError:
-  from Exercicios.output_constants import *
+  try:
+    from output_constants import *
+  except ImportError:
+    from Exercicios.output_constants import *
 
 
 # Exercicio 1: Crie um algoritmo que mostre os 30 primeiros numeros impares e pares.

@@ -1,17 +1,14 @@
 import unittest
+import sys
+import importlib.util
+from pathlib import Path
 from unittest import mock
 from io import StringIO
 from contextlib import redirect_stdout
 
-try:
-  from Exercicios.exec_loop import *
-except ImportError:
-  from exec_loop import *
 
-try:
-  from Exercicios.output_constants import *
-except ImportError:
-  from Exercicios.output_constants import *
+from Exercicios.output_constants import *
+from Exercicios.if_match_loop.exec_loop import *
 
 
 class TestLoopExercises(unittest.TestCase):
