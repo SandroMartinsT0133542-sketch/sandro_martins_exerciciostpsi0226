@@ -39,49 +39,51 @@ def calculate_interval(value:int):
   interval_size = UNICODE_MAX - UNICODE_MIN + 1 
   return (value - UNICODE_MIN) % interval_size + UNICODE_MIN
 
-def calculate_key(chave:str):
+def calculate_string_keys(key:str):
   key_value = 0
-  for char in chave:
+  for char in key:
     key_value += ord(char)
   return key_value
 
-def criptografar(mensagem:str, chave:str):
-  if not chave:
+def encrypt_message(mensagem:str, key:str):
+  if not key:
     raise ValueError("A chave não pode ser vazia.")
   
-  key_value = calculate_key(chave)
-  codigos = []
+  key_value = calculate_string_keys(key)
+  codes_list = []
   
   for char in mensagem:
     encrypted_value = calculate_interval(ord(char) + key_value)
-    codigos.append(encrypted_value)
+    codes_list.append(encrypted_value)
   
-  return codigos
+  return codes_list
 
-def descriptografar(codigos:list[int], chave:str):
-  if not chave:
+def decrypt_message(codes:list[int], key:str):
+  if not key:
     raise ValueError("A chave não pode ser vazia.")
   
-  key_value = calculate_key(chave)
+  key_value = calculate_string_keys(key)
   mensagem = ""
   
-  for code in codigos:
+  for code in codes:
     decrypted_value = calculate_interval(code - key_value)
     mensagem += chr(decrypted_value)
   
   return mensagem
 
-
-
-
 message = "Olá Mundo, espero que funcione este novo projeto de criptografia!"
 decryption_key = "chave"
 
-codigos_criptografados = criptografar(message, decryption_key)
-print("Mensagem Criptografada:", codigos_criptografados)
+encrypted_codes = encrypt_message(message, decryption_key)
 
-mensagem_descriptografada = descriptografar(codigos_criptografados, decryption_key)
-print("Mensagem Descriptografada:", mensagem_descriptografada)
+print("---- Criptografia e Descriptografia de Mensagens ----\n")
+print("Codigos da Mensagem Criptografada:", encrypted_codes, "\n")
+
+decrypted_message = decrypt_message(encrypted_codes, decryption_key)
+print("Mensagem Descriptografada:", decrypted_message, "\n")
+
+failed_decryption = decrypt_message(encrypted_codes, "chave_errada")
+print("Tentativa de Descriptografia com Chave Errada:", failed_decryption, "\n")
 
 
 
